@@ -33,17 +33,13 @@ def derivYX(x,y):
 
 def deltaX(x,y):
     multiplier = -1/((derivXX(x,y)*derivYY(x,y))-(derivXY(x,y)*derivYX(x,y)))
-    print(x, y, multiplier)
     answer = multiplier * ((derivYY(x,y)*derivX(x,y)) + (-(derivXY(x,y))*derivY(x,y)))
-    print(((derivYY(x,y)*derivX(x,y)) + (-(derivXY(x,y))*derivY(x,y))))
     print("DeltaX: " + str(answer))
     return answer
 
 def deltaY(x,y):
     multiplier = -1/((derivXX(x,y)*derivYY(x,y))-(derivXY(x,y)*derivYX(x,y)))
-    print(x, y, multiplier)
     answer = multiplier * ((-(derivYX(x,y))*derivX(x,y)) + (derivXX(x,y)*derivY(x,y)))
-    print(((-(derivYX(x,y))*derivX(x,y)) + (derivXX(x,y)*derivY(x,y))))
     print("DeltaY: " + str(answer))
     return answer
 
@@ -65,5 +61,5 @@ def recursion(x,y,n):
         return recursion(newX,newY,(n+1))
 
     
-recursion(0,0,1)
+recursion(0,0.5,1)
 #deltaY(0,0.5)
