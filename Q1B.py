@@ -1,6 +1,3 @@
-import sys
-sys.setrecursionlimit(1100)
-
 def derivX(x,y):
     answer = (2*(x-1)) - (400*x*(y-(x**2)))
 #    print(answer)
