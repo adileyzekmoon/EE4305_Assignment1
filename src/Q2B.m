@@ -26,15 +26,21 @@ for n = 1: 10
     net = fitnet(n, 'trainlm');
     net = train(net, input, output);
     test_results(n,:) = net(test); % predictions on training set
+    resultsOfThree(n,:) = net(3);
+    resultsOfNThree(n,:) = net(-3);
 end
 
 net = fitnet(20, 'trainlm');
 net = train(net, input, output);
 test_results(11,:) = net(test); % predictions on training set
+resultsOfThree(11,:) = net(3);
+    resultsOfNThree(11,:) = net(-3);
 
 net = fitnet(50, 'trainlm');
 net = train(net, input, output);
 test_results(12,:) = net(test); % predictions on training set
+resultsOfThree(12,:) = net(3);
+    resultsOfNThree(12,:) = net(-3);
 
     
 

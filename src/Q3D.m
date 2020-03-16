@@ -6,6 +6,7 @@ val_namelist = {val_folder.name}.';
 val_namelist = val_namelist(3:169);
 train_images = [];
 val_images = [];
+epoch = 1;
 
 % Populate training images matrix
 for i = 1: size(training_namelist)
@@ -22,7 +23,7 @@ end
 train_images = double(train_images);
 
 net = patternnet(64);
-for i=1:10
+for i=1:epoch
     net = adapt(net, train_images, training_labels);
 end
 

@@ -14,7 +14,7 @@ for i = 1: size(training_namelist)
     tmp = strsplit(name, {'_', '.'});
     training_labels(i)= str2num(tmp{3});
     I = imread(name);
-    I = imresize(I, [32 32]);
+    I = imresize(I, [64 64]);
     V=I(:);
     train_images = [train_images,V];
 end
@@ -22,7 +22,7 @@ end
 % Convert to double for matrix multiplication
 train_images = double(train_images);
 % initialise weights at all 0
-w = zeros(1, 1024);
+w = zeros(1, (64*64));
 learning_rate = .001;
 
 
@@ -55,7 +55,7 @@ for i = 1: size(val_namelist)
     tmp = strsplit(name, {'_', '.'});
     validation_labels(i)= str2num(tmp{3});
     I = imread(name);
-    I = imresize(I, [32 32]);
+    I = imresize(I, [64 64]);
     V=I(:);
     val_images = [val_images,V];
 end

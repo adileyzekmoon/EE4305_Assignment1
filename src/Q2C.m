@@ -26,24 +26,21 @@ for n = 1: 10
     net = fitnet(n, 'trainbr');
     net = train(net, input, output);
     test_results(n,:) = net(test); % predictions on training set
+    resultsOfThree(n,:) = net(3);
+    resultsOfNThree(n,:) = net(-3);
 end
 
 net = fitnet(20, 'trainbr');
 net = train(net, input, output);
 test_results(11,:) = net(test); % predictions on training set
+resultsOfThree(11,:) = net(3);
+resultsOfNThree(11,:) = net(-3);
 
 net = fitnet(50, 'trainbr');
 net = train(net, input, output);
 test_results(12,:) = net(test); % predictions on training set
+resultsOfThree(12,:) = net(3);
+    resultsOfNThree(12,:) = net(-3);
 
     
-
-
-
-% accu_train = 1 - mean(abs(pred_train-output));
-
-% pred_val = round(net(images(:,train_num+1:end))); % predictions on validation set
-% accu_val(i) = 1 - mean(abs(pred_val-labels(train_num+1:end)));
-
-
 
